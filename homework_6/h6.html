@@ -15,7 +15,7 @@
     <div class="card" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title" data-number="100">Card title</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <h6 class="card-subtitle mb-2 text-muted">Card fghgf subtitle</h6>
             <p class="card-text" data-number="50">
                 Some quick example text to build on the card title and make up the bulk of the card's
                 content.
@@ -55,15 +55,29 @@
         // []()
         // 5. Выведите содержимое тега title в консоль.
 
-        const tagTitle = document.getElementsByTagName('title');
-        console.log(tagTitle);
+        // const tagTitle = document.querySelector('title');;
+        // console.log(tagTitle.text);
 
         // []()
         // 6. Получите элемент с классом "card-title" и выведите его родительский узел в консоль.
         // []()
+
+        // const cardTitleEl = document.querySelector('.card-title');
+        // console.log(cardTitleEl.parentElement);                          
+
         // 7. Создайте тегp`, запишите внутри него текст "Привет" и добавьте созданный тег в начало элемента, который имеет класс "card".
 
+        // const cardEl = document.querySelector('.card');
+        // const cardBodyEl = document.querySelector('card-body');
+        // const paragraphEl = document.createElement('p');
+        // cardEl.insertBefore(paragraphEl, cardEl.firstElementChild);
+        // paragraphEl.textContent = 'Привет';
+
         // 8. Удалите тег h6 на странице
+  
+        const heading6 = document.querySelector('h6');
+        heading6.remove();
+
     </script>
 </body>
 
