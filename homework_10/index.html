@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            text-decoration: none;
+        }
+        .img {
+            width: 880px;
+            height: 440px;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            background: rgb(224, 222, 222);
+        }
+        .currency {
+            border: 1px solid rgb(128, 126, 126);
+            padding: 10px;
+            background: rgb(241, 239, 239);
+        }
+        h1{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rgb(78, 82, 80);
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Валюты мира</h1>
+    </div>
+    <script src="data.js"></script>
+    <script>
+        //         Задание 1
+        // 1. Поиск в интернете (бесплатные api примеры).
+        // 2. Найти любые данные, на произвольную тему.
+        // 3. Создать файл data.js.
+        // 4. Создать переменную которая будет хранить данные из публичных api.
+
+        // Задание 2
+        // 1. Создать файл index.html.
+        // 2. Подключить data.js.
+        // 3. Сформировать контент из данных (картинка загловок и параграф).
+        // 4. Добавить данный контент в вёрстку.
+        // 5. * Добавить стили при необходимости (по желанию).
+
+        const data = JSON.parse(dataInfo);
+        console.log(data);
+        data.forEach(e => {
+            const divCurrEl = document.createElement('div');
+        divCurrEl.classList.add('currency');
+        document.querySelector('.content').appendChild(divCurrEl);
+
+        const imgEl = document.createElement('img');
+        imgEl.classList.add('img');
+        imgEl.src = e.img;
+        divCurrEl.appendChild(imgEl);
+
+        const h3CodeEl = document.createElement('h3');
+        h3CodeEl.classList.add('code');
+        h3CodeEl.textContent = e.code;
+        divCurrEl.appendChild(h3CodeEl);
+
+        const pSymbolEl = document.createElement('p');
+        pSymbolEl.classList.add('symbol');
+        pSymbolEl.textContent = e.symbol;
+        divCurrEl.appendChild(pSymbolEl);
+
+        const pDescEl = document.createElement('p');
+        pDescEl.classList.add('description');
+        pDescEl.textContent = e.description;
+        divCurrEl.appendChild(pDescEl);
+
+        const aUrlEl = document.createElement('a');
+        aUrlEl.classList.add('url');
+        aUrlEl.textContent = 'Ссылка';
+        aUrlEl.href = e.url;
+        divCurrEl.appendChild(aUrlEl);
+        });
+    </script>
+</body>
+</html>
